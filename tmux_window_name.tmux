@@ -12,6 +12,7 @@ else
         exit 0
     fi
 fi
+export TMUX_WINDOW_NAME_LAUNCHER="$LAUNCHER"
 
 tmux set -g automatic-rename on # Set automatic-rename on to make #{automatic-rename} be on when a new window is been open without a name
 tmux set-hook -g 'after-new-window[8921]' 'set -wF @tmux_window_name_enabled \#\{automatic-rename\} ; set -w automatic-rename off'
